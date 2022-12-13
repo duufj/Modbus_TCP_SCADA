@@ -1,0 +1,194 @@
+{% extends 'base.html'%}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content%}
+
+<!-- <div class="container">
+
+    <h1>Home</h1>
+
+
+</div> -->
+
+
+<div class="container">
+    <br>
+    <h1>Bem vindos ao MODBUS-TCP!</h1>
+    <br>
+    <p>Esse aplicativo serve como um <mark>cliente/mestre</mark> de MODBUS-TCP. Para começar a utilizar, basta ir à
+        página
+        configurações e parametrizar o dispositivo(servidor/escravo) em questão. </p>
+
+    <p>O aplicativo tem como intuito facilitar testes, ou até mesmo servir como um supervisório, para dispositivos
+        MODBUS conectados a rede TCP/IP. Na maioria dos casos, os dispositivo possuem apenas meios de comunicação
+        exclusivamente seriais
+        (MODBUS-RTU/RS-485) porém, podem ser facilmente incluidas em uma rede TCP/IP utilizandos gateways como o exemplo
+        abaixo ilustra.
+    </p>
+
+    <div class="ratio ratio-4x3">
+        <iframe src="https://www.wirebus.com.br/wp-content/uploads/2020/09/Mestre-Ethernt-1-600x600.png"
+            title="Topologia modbus-gateway"></iframe>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
+<!-- <form action="/" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Endereço IP</label>
+            <input class="form-control" id="exampleInputEmail1" name="ip" placeholder={{ip}}>
+            <div id="emailHelp" class="form-text">Ex. "192.168.15.4".</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Porta</label>
+            <input class="form-control" id="exampleInputEmail2" name="porta" placeholder={{porta}}>
+            <div id="emailHelp" class="form-text">Ex. "501".</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Endereço do escravo</label>
+            <input class="form-control" id="exampleInputEmail2" name="endereco" placeholder={{endereco}}>
+            <div id="emailHelp" class="form-text">Ex. "1".</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Registrador tensão</label>
+            <input class="form-control" id="exampleInputEmail3" name="registrador_tensao"
+                placeholder={{registradores.0}}>
+            <div id="emailHelp" class="form-text">Ex. "40001".</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Registrador Corrente</label>
+            <input class="form-control" id="exampleInputEmail4" name="registrador_corrente"
+                placeholder={{registradores.1}}>
+            <div id="emailHelp" class="form-text">Ex. "40002".</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Registrador Potência</label>
+            <input class="form-control" id="exampleInputEmail5" name="registrador_potencia"
+                placeholder={{registradores.2}}>
+            <div id="emailHelp" class="form-text">Ex. "40003".</div>
+        </div>
+
+
+
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+
+ -->
+
+
+<!-- 
+    <div>
+        IP do dispositivo:
+    </div>
+
+    <form class="row g-3" action="/" method="post">
+        <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value={{ip}}>
+        </div>
+        <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">IP</label>
+            <input class="form-control" id="inputPassword2" name="ip">
+            <span id="passwordHelpInline" class="form-text">
+                Ex. "192.168.15.4".
+            </span>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Salvar</button>
+        </div>
+    </form>
+
+
+    <div>
+        Porta do dispositivo:
+    </div>
+    <form class="row g-3">
+        <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value={{porta}}>
+        </div>
+        <div class="col-auto">
+            <label for="inputPassword3" class="visually-hidden">Porta</label>
+            <input class="form-control" id="inputPassword3" name="porta">
+            <span id="passwordHelpInline" class="form-text">
+                Ex. "501".
+            </span>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Salvar</button>
+        </div>
+    </form> -->
+
+<!--
+
+    <div>
+        Registrador de tensão:
+    </div>
+    <form class="row g-3">
+        <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value={{registradores.0}}>
+        </div>
+        <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">Registrador_tensao</label>
+            <input class="form-control" id="inputPassword2">
+            <span id="passwordHelpInline" class="form-text">
+                Ex. "40001".
+            </span>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Salvar</button>
+        </div>
+    </form>
+
+
+    <div>
+        Registrador de Corrente:
+    </div>
+    <form class="row g-3">
+        <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value={{registradores.1}}>
+        </div>
+        <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">Registrador_corrente</label>
+            <input class="form-control" id="inputPassword2">
+            <span id="passwordHelpInline" class="form-text">
+                Ex. "40002".
+            </span>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Salvar</button>
+        </div>
+    </form>
+
+
+    <div>
+        Registrador de Potência:
+    </div>
+    <form class="row g-3">
+        <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value={{registradores.2}}>
+        </div>
+        <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">Registrador_potencia</label>
+            <input class="form-control" id="inputPassword2">
+            <span id="passwordHelpInline" class="form-text">
+                Ex. "40003".
+            </span>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Salvar</button>
+        </div>
+    </form> -->
+<!-- 
+
+</div>
